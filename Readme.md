@@ -54,12 +54,12 @@ python main.py
 ## Some results from our paper
 
 <br>
-<img src="https://github.com/josedolz/IVD-Net/tree/master/Images/IVD_Results.png" />
+<img src="https://github.com/josedolz/IVD-Net/Images/IVD_Results.png" />
 <br>
 
 
 <br>
-<img src="https://github.com/josedolz/IVD-Net/tree/master/Images/3D.png"/>
+<img src="https://github.com/josedolz/IVD-Net/Images/3D.png"/>
 <br>
 If you use this code for your research, please consider citing the original paper:
 
