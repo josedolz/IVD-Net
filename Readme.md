@@ -12,6 +12,14 @@ Repository containing the source code of the IVD-Net segmentation network that w
 # Pre-processing
 If you just want to run the IVD dataset with this code, you simply need to convert the 3D volumes to 2D slices/images. Then, the structure to save the images should be (note that val and test folders will have the same structure than train):
 
+ .
+    ├── ...
+    ├── test                    # Test files (alternatively `spec` or `tests`)
+    │   ├── benchmarks          # Load and stress tests
+    │   ├── integration         # End-to-end, integration tests (alternatively `e2e`)
+    │   └── unit                # Unit tests
+    └── ...
+    
 MainFolder/
 ----| train/
 --------| Fat/
@@ -46,12 +54,12 @@ python main.py
 ## Some results from our paper
 
 <br>
-<img src="https://github.com/josedolz/IVD-Net/tree/master/Images/IVD_Results.pnd" />
+<img src="https://github.com/josedolz/IVD-Net/tree/master/Images/IVD_Results.png" />
 <br>
 
 
 <br>
-<img src="https://github.com/josedolz/IVD-Net/tree/master/Images/3D.pnd" />
+<img src="https://github.com/josedolz/IVD-Net/tree/master/Images/3D.png" />
 <br>
 If you use this code for your research, please consider citing the original paper:
 
