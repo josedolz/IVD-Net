@@ -7,7 +7,52 @@ Repository containing the source code of the IVD-Net segmentation network that w
 - The code has been written in Python (3.5) and pyTorch.
 - You should also have installed torchvision and scipy
 
+## Running the code
 
+# Pre-processing
+If you just want to run the IVD dataset with this code, you simply need to convert the 3D volumes to 2D slices/images. Then, the structure to save the images should be (note that val and test folders will have the same structure than train):
+
+MainFolder/
+----| train/
+--------| Fat/
+------------| ImgName_xxxx0.png
+------------| ImgName_xxxx1.png
+------------| ....
+--------| GT/
+------------| ImgName_xxxx0.png
+------------| ImgName_xxxx1.png
+------------| ....
+--------| Inn/
+------------| ImgName_xxxx0.png
+------------| ImgName_xxxx1.png
+------------| ....
+--------| Opp/
+------------| ImgName_xxxx0.png
+------------| ImgName_xxxx1.png
+------------| ....
+--------| Wat/
+------------| ImgName_xxxx0.png
+------------| ImgName_xxxx1.png
+------------| ....
+----| Val/
+----| Test/
+
+Then you simply have to write in the command line:
+
+```
+python main.py 
+```
+
+## Some results from our paper
+
+<br>
+<img src="https://github.com/josedolz/IVD-Net/tree/master/Images/IVD_Results.pnd" />
+<br>
+
+
+<br>
+<img src="https://github.com/josedolz/IVD-Net/tree/master/Images/3D.pnd" />
+<br>
 If you use this code for your research, please consider citing the original paper:
 
 - Dolz J, Desrosiers C, Ben Ayed I. [IVD-Net: Intervertebral disc localization and segmentation in MRI with a multi-modal UNet.](https://arxiv.org/abs/1811.08305) arXiv preprint arXiv:1811.08305. 2018 Nov 19.
