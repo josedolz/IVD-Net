@@ -5,7 +5,6 @@ import torch.nn.functional as F
 from torch.autograd import Variable
 import torchvision
 import os
-import skimage.transform as skiTransf
 from progressBar import printProgressBar
 import scipy.io as sio
 from scipy import ndimage
@@ -105,10 +104,10 @@ def saveImages(net, img_batch, batch_size, epoch, modelName):
         image_f,image_i,image_o,image_w, labels, img_names = data
 
         # Be sure here your image is betwen [0,1]
-        image_f=image_f.type(torch.FloatTensor)/65535
-        image_i=image_i.type(torch.FloatTensor)/65535
-        image_o=image_o.type(torch.FloatTensor)/65535
-        image_w=image_w.type(torch.FloatTensor)/65535
+        image_f=image_f.type(torch.FloatTensor)
+        image_i=image_i.type(torch.FloatTensor)
+        image_o=image_o.type(torch.FloatTensor)
+        image_w=image_w.type(torch.FloatTensor)
 
         images = torch.cat((image_f,image_i,image_o,image_w),dim=1)
 
@@ -184,86 +183,7 @@ def inference(net, img_batch, batch_size, epoch):
     ValDice1 = DicesToDice(Dice1)
    
     return [ValDice1]
-  
 
- 
-def l2_penalty(var):
-    return torch.sqrt(torch.pow(var, 2).sum())
-
-'''
-class MaskToTensor(object):
-    def __call__(self, img):
-        return torch.from_numpy(np.array(img, dtype=np.int32)).float()
-'''
-
-'''
-def resizeTensorMask(batch, scalingFactor):
-    data = batch.cpu().data.numpy()
-    batch_s = data.shape[0]
-    numClasses = data.shape[1]
-    img_size = data.shape[2]
-    # TODO: Better way to define this
-    resizedLabels = np.zeros((batch_s,
-                              numClasses,
-                              img_size / scalingFactor,
-                              img_size / scalingFactor))
-
-    for i in range(data.shape[0]):
-
-        for l in range(numClasses):
-            img = data[i, l, :, :].reshape(img_size, img_size)
-            imgRes = skiTransf.resize(img, (img_size / scalingFactor, img_size / scalingFactor), preserve_range=True)
-            idx0 = np.where(imgRes < 0.5)
-            idx1 = np.where(imgRes >= 0.5)
-            imgRes[idx0] = 0
-            imgRes[idx1] = 1
-            resizedLabels[i, l, :, :] = imgRes
-
-    tensorClass = torch.from_numpy(resizedLabels).float()
-    return Variable(tensorClass.cuda())
-'''
-
-'''
-def resizeTensorMaskInSingleImage(batch, scalingFactor):
-    data = batch.cpu().data.numpy()
-    batch_s = data.shape[0]
-    numClasses = data.shape[1]
-    img_size = data.shape[2]
-    # TODO: Better way to define this
-    resizedLabels = np.zeros((batch_s,
-                              img_size / scalingFactor,
-                              img_size / scalingFactor))
-
-    for i in range(data.shape[0]):
-        img = data[i, :, :].reshape(img_size, img_size)
-        imgL = np.zeros((img_size, img_size))
-        idx1t = np.where(img == 1)
-        imgL[idx1t] = 1
-        imgRes = skiTransf.resize(imgL, (img_size / scalingFactor, img_size / scalingFactor), preserve_range=True)
-        idx1 = np.where(imgRes >= 0.5)
-
-        imgL = np.zeros((img_size, img_size))
-        idx2t = np.where(img == 1)
-        imgL[idx2t] = 1
-        imgRes = skiTransf.resize(imgL, (img_size / scalingFactor, img_size / scalingFactor), preserve_range=True)
-        idx2 = np.where(imgRes >= 0.5)
-
-        imgL = np.zeros((img_size, img_size))
-        idx3t = np.where(img == 1)
-        imgL[idx3t] = 1
-        imgRes = skiTransf.resize(imgL, (img_size / scalingFactor, img_size / scalingFactor), preserve_range=True)
-        idx3 = np.where(imgRes >= 0.5)
-
-        imgResized = np.zeros((img_size / scalingFactor, img_size / scalingFactor))
-        imgResized[idx1] = 1
-        imgResized[idx2] = 2
-        imgResized[idx3] = 3
-
-        resizedLabels[i, :, :] = imgResized
-
-    tensorClass = torch.from_numpy(resizedLabels).long()
-    return Variable(tensorClass.cuda())
-'''
 
 
 
