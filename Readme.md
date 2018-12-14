@@ -59,7 +59,7 @@ python main.py
 
 
 <br>
-<img src="https://github.com/josedolz/IVD-Net/tree/master/Images/3D.png" />
+<img src="https://github.com/josedolz/IVD-Net/tree/master/Images/3D.png"/>
 <br>
 If you use this code for your research, please consider citing the original paper:
 
