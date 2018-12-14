@@ -4,7 +4,6 @@ from progressBar import printProgressBar
 import medicalDataLoader
 from utils import *
 
-
 from IVD_Net import *
 
 import time
@@ -140,10 +139,10 @@ def runTraining():
             image_f,image_i,image_o,image_w, labels, img_names = data
             
             # Be sure your data here is between [0,1]
-            image_f=image_f.type(torch.FloatTensor)/65535
-            image_i=image_i.type(torch.FloatTensor)/65535
-            image_o=image_o.type(torch.FloatTensor)/65535
-            image_w=image_w.type(torch.FloatTensor)/65535
+            image_f=image_f.type(torch.FloatTensor)
+            image_i=image_i.type(torch.FloatTensor)
+            image_o=image_o.type(torch.FloatTensor)
+            image_w=image_w.type(torch.FloatTensor)
             
             labels = labels.numpy()
             idx=np.where(labels>0.0)
