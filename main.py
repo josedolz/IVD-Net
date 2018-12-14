@@ -3,11 +3,8 @@ from torchvision import transforms
 from progressBar import printProgressBar
 import medicalDataLoader
 from utils import *
-
 from IVD_Net import *
-
 import time
-
 from optimizer import Adam
 
 def weights_init(m):
