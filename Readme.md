@@ -12,11 +12,23 @@ Repository containing the source code of the IVD-Net segmentation network ([link
 ### Pre-processing
 If you just want to run the IVD dataset with this code, you simply need to convert the 3D volumes to 2D slices/images. Then, the structure to save the images should be (note that val and test folders will have the same structure than train):
 
-root
-+-- dir1
-    +--file1
-+-- dir2
-    +-- file2
+|-- .bowerrc
+    |-- .jshintrc
+    |-- .jshintrc2
+    |-- Gruntfile.js
+    |-- README.md
+    |-- bower.json
+    |-- karma.conf.js
+    |-- package.json
+    |-- app
+        |-- app.js
+        |-- db.js
+        |-- directoryList.md
+        |-- index.html
+        |-- mddir.js
+        |-- routing.js
+        |-- server.js
+        |-- _api
     
 .    
 +-- MainFolder
