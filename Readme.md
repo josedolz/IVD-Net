@@ -54,7 +54,7 @@ python main.py
 ## Some results from our paper
 
 <br>
-<img src="https://github.com/josedolz/IVD-Net/Images/IVD_Results.png" />
+<img src="https://github.com/josedolz/IVD-Net/blob/master/Images/IVD_Results.png" />
 <br>
 
 
