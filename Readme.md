@@ -1,6 +1,6 @@
 # IVD-Net: Intervertebral disc localization and segmentation in MRI with a multi-modal UNet
 
-Repository containing the source code of the IVD-Net segmentation network [link](https://arxiv.org/abs/1811.08305) that we proposed for the MICCAI 2018 IVD segmentation challenge. This architecture was used to segment the inetervertebral disc in multi-modal MRI images. Nevertheless, it can be used to segment any other structure/s in a multi-modal image setting.
+Repository containing the source code of the IVD-Net segmentation network ([link](https://arxiv.org/abs/1811.08305)) that we proposed for the MICCAI 2018 IVD segmentation challenge. This architecture was used to segment the inetervertebral disc in multi-modal MRI images. Nevertheless, it can be used to segment any other structure/s in a multi-modal image setting.
 
 ## Requirements
 
@@ -19,9 +19,9 @@ If you just want to run the IVD dataset with this code, you simply need to conve
     │   ├── integration         # End-to-end, integration tests (alternatively `e2e`)
     │   └── unit                # Unit tests
     └── ...
-    
-MainFolder/
-----| train/
+.    
++-- MainFolder/
+|  +-- train/
 --------| Fat/
 ------------| ImgName_xxxx0.png
 ------------| ImgName_xxxx1.png
